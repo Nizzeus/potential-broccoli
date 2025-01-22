@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Page Web App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Survey</h1>
+    <nav>
+      <ul>
+        <li><a href="#cat">Picture of a Pallas Cat</a></li>
+        <li><a href="#survey">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="cat" class="section">
+        <h2>Picture of a Pallas Cat</h2>
+        <img src="11805679365_bca719ea58_b.jpg" alt="Pallas cat" style="max-width: 100%; height: auto;">
+    </section>
+
+    <section id="survey" class="section">
+      <h3>Survey</h3>
+      <p>Tell us what you think of the image above:</p>
+      <form id="surveyForm">
+        <textarea id="message" placeholder="Your Thoughts" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="formFeedback"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Pallas Cat survey</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

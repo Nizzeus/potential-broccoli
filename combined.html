@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Page Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    line-height: 2.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: goldenrod;
+    }
+
+    header {
+      background: #222222;
+      color: #ffffff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 10px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .section {
+      margin: 25px 20px 20px 25px;
+      padding: 50px;
+      font-size: 16px;
+      background: #222222;
+      color: #ffffff;
+      border-radius: 12px;
+      border-style: solid;
+    }
+    
+    #cat {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    form input, form textarea, form button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #adadad;
+      border-radius: 4px;
+    }
+
+    form button {
+      background: #333333;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #555555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #222222;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Survey</h1>
+    <nav>
+      <ul>
+        <li><a href="#cat">Picture of a Pallas Cat</a></li>
+        <li><a href="#survey">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="cat" class="section">
+        <h2>Picture of a Pallas Cat</h2>
+        <img src="11805679365_bca719ea58_b.jpg" alt="Pallas cat" style="max-width: 100%; height: auto;">
+    </section>
+
+    <section id="survey" class="section">
+      <h3>Survey</h3>
+      <p>Tell us what you think of the image above:</p>
+      <form id="surveyForm">
+        <textarea id="message" placeholder="Your Thoughts" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="formFeedback"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Pallas Cat survey</p>
+  </footer>
+
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const message = document.getElementById('message').value;
+  
+    const feedback = `Thank you for answering this survey!`;
+    document.getElementById('formFeedback').innerText = feedback;
+  
+    this.reset();
+  });
+  </script>
+</body>
+</html>
